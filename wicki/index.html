@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8"/>
+		<title>Wikipedia Search</title>
+
+		<link href="http://fonts.googleapis.com/css?family=Cookie|Open+Sans:400,700" rel="stylesheet" />
+
+		<link href="style.css" rel="stylesheet" />
+
+		
+	</head>
+
+	
+	<body ng-app="instantSearch" ng-controller="InstantSearchController">
+        <div id="logo">
+        <img src="wicki_logo.png" height="200px" width="200px"/>
+        </div>
+		<div class="bar">
+			
+			<input type="text" name="search_item" ng-model="search_item" ng-change="search()" placeholder="What do you want to know?" />
+
+		</div>
+		<ul>
+			<!-- Render a li element for every entry in the items array. 
+			 -->
+			<li ng-repeat="i in wiki_data.data1 | searchFor:searchString">
+				
+				
+                 	<a href="{{i.url}}" target="_blank"><p>{{i.name}}</p></a>
+            </li>
+		</ul>
+
+		<!-- Include AngularJS from Google's CDN -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="Controller_script.js"></script>
+		
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	</body>
+</html>

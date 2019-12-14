@@ -5,41 +5,27 @@
 </head>
 <body>
     <canvas id="myCanvas" width="500" height="500"></canvas>
- 
- 
 </body>
 <style>
-canvas
-{
-background-color:black;
-}
+    canvas {
+        background-color: black;
+    }
 </style>
 <script>
-
-var canvasElement = document.querySelector("#myCanvas");
-var context = canvasElement.getContext("2d");
-canvasElement.addEventListener('click', function(e) {
-
-	console.log(e.clientX); 
-context.beginPath();
-context.moveTo(100, 100);
-context.lineTo(100,300);
-context.lineTo(300,300);
-context.closePath();
-
-// the outline
-context.lineWidth = 10;
-context.strokeStyle = '#666666';
-context.stroke();
- 
-// the fill color
-context.fillStyle = "#FFCC00";
-context.fill();
-
-
-
-}, false);
-
-
+    var canvasElement = document.querySelector("#myCanvas");
+    var context = canvasElement.getContext("2d");
+    canvasElement.addEventListener('click', function (e) {        context.beginPath();
+        context.moveTo(100, 100);
+        context.lineTo(100, 300);
+        context.lineTo(300, 300);
+        context.closePath();
+        // the outline
+        context.lineWidth = 10;
+        context.strokeStyle = '#666666';
+        context.stroke();
+        // the fill color
+        context.fillStyle = "#FFCC00";
+        context.fill();
+    }, false);
 </script>
 </html>
